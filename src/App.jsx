@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import {
-  NavBar, Home
+  NavBar, Home, Footer
 } from '../src/components/index';
 
 function App() {
   return (
     <>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <div className="min-h-screen flex flex-col"> 
+        <Router>
+          <NavBar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </>
   )
 }
