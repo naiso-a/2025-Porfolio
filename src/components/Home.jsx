@@ -1,11 +1,62 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { animate } from "animejs";
+import reactLogo from "../assets/dev_logo.svg";
 import videoSrc from "../assets/131976-751915258.mp4";
-
+import martinPhoto from "../assets/martin_photo.jpg"
 
 export default function Home() {
+    const videoRef = useRef(null);
+    const sectionRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useEffect(() => {
+
+        // Side from the left for the photo
+        animate(imageRef.current, {
+            translateX: [-100, 0],
+            opacity: [0, 1],
+            rotate: [-10, 0],
+            duration: 1600,
+            easing: "spring(1, 80, 10, 0)"
+        });
+
+        // Animation au scroll (full anime.js)
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // progression entre 0 et 1
+            const progress = Math.min(scrollTop / windowHeight, 1);
+
+            // Anime opacity de la vidéo
+            animate(videoRef.current, {
+                opacity: 1 - progress,
+                duration: 800, // ← ralentir / accélérer
+                easing: "easeOutQuad"
+            });
+
+            // Anime translateY de la section suivante
+            animate(sectionRef.current, {
+                translateY: `${100 - progress * 100}%`,
+                duration: 100, // durée de la transition
+                //easing: "easeOutExpo"
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <>
-            <div className="relative w-full h-screen overflow-hidden">
+        <div ref={root} className="relative w-full h-[100vh]">
+            {/* Section vidéo */}
+            <div
+                ref={videoRef}
+                className="absolute top-0 left-0 w-full h-screen overflow-hidden transition-all duration-300"
+            >
                 <video
                     autoPlay
                     muted
@@ -17,11 +68,39 @@ export default function Home() {
                 </video>
 
                 <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+                <div className="relative z-10 flex items-center justify-center h-full px-8 md:px-16 lg:px-24">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 max-w-7xl w-full">
+                        {/* Image à gauche */}
+                        <div className="w-full md:w-[40%] ">
+                            <img
+                                ref={imageRef}
+                                src={martinPhoto}
+                                alt="Martin"
+                                className="w-full h-auto rounded-lg shadow-2xl object-cover"
+                            />
+                        </div>
 
-                <div className="relative z-10 flex items-center justify-center h-full">
-                    <h1 className="text-white text-4xl font-bold">Bienvenue sur mon site</h1>
+                        {/* Texte à droite */}
+                        <div className="w-full md:w-[100%] space-y-4">
+                            <h1 className="text-white text-5xl md:text-6xl font-bold">
+                                Welcome to my Portfolio
+                            </h1>
+                            <p className="text-white text-lg md:text-xl">
+                                Student at Epitech
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </>
+
+            {/* Section suivante */}
+            <div
+                ref={sectionRef}
+                className="relative z-20 w-full h-screen bg-white flex items-center justify-center"
+                style={{ transform: "translateY(100%)" }} // point de départ
+            >
+                <h2 className="text-4xl font-bold text-black">Ma deuxième section</h2>
+            </div>
+        </div>
     );
 }
