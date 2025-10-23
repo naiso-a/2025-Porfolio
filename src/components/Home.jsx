@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
 import reactLogo from "../assets/dev_logo.svg";
-import videoSrc from "../assets/131976-751915258.mp4";
+import videoSrc from "../assets/background_video.mp4";
 import martinPhoto from "../assets/martin_photo.jpg"
+
+const resumePdf = "/CV_MartinKhyari.pdf";
+
 
 export default function Home() {
     const videoRef = useRef(null);
@@ -30,7 +33,6 @@ export default function Home() {
 
             // Anime opacity de la vidéo
             animate(videoRef.current, {
-                opacity: 1 - progress,
                 duration: 800, // ← ralentir / accélérer
                 easing: "easeOutQuad"
             });
@@ -42,6 +44,7 @@ export default function Home() {
                 //easing: "easeOutExpo"
             });
         };
+            
 
         window.addEventListener("scroll", handleScroll);
 
@@ -86,8 +89,7 @@ export default function Home() {
                                 Welcome to my Portfolio
                             </h1>
                             <p className="text-white text-lg md:text-xl">
-                                Student at Epitech
-                            </p>
+                                As a student developer at Epitech, I want to put my technical skills and curiosity to work for an innovative team as part of a work-study program.                            </p>
                         </div>
                     </div>
                 </div>
@@ -97,9 +99,18 @@ export default function Home() {
             <div
                 ref={sectionRef}
                 className="relative z-20 w-full h-screen bg-white flex items-center justify-center"
-                style={{ transform: "translateY(100%)" }} // point de départ
+                style={{ transform: "translateY(100%)" }}
             >
-                <h2 className="text-4xl font-bold text-black">Ma deuxième section</h2>
+                <div className="flex flex-col items-center gap-8">
+                    <a
+                        href={resumePdf}
+                        download
+                        className="inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-full text-xl font-semibold shadow-2xl hover:scale-105 active:scale-95 transition-transform"
+                        aria-label="Download CV"
+                    >
+                        Télécharger mon CV
+                    </a>
+                </div>
             </div>
         </div>
     );
