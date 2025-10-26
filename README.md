@@ -37,3 +37,8 @@ Personal portfolio project (React + Vite + Tailwind) for Martin Khyari — pages
   - main.jsx, App.jsx, index.css, etc.
 rinted URL.
 - For issues/questions, contact martin.khyari@gmail.com
+
+## Deploiement 
+
+error for deploiement at : 
+https://naiso-a.github.io/Projects
