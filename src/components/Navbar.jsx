@@ -29,16 +29,13 @@ export default function Navbar() {
             <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/80 py-4 px-8 rounded-4xl shadow-md border border-stone-500 z-50 backdrop-blur-md w-auto flex items-center gap-8">
                 <ul className="flex justify-center divide-x divide-stone-300 text-stone-600 font-semibold">
                     <li className="px-4">
-                        <a href="#" className="hover:text-gray-400 transition">Home</a>
+                        <a href="/" className="hover:text-gray-400 transition">Home</a>
                     </li>
                     <li className="px-4">
-                        <a href="#" className="hover:text-gray-400 transition">Projects</a>
+                        <a href="/Projects" className="hover:text-gray-400 transition">Projects</a>
                     </li>
                     <li className="px-4">
-                        <a href="#" className="hover:text-gray-400 transition">About</a>
-                    </li>
-                    <li className="px-4">
-                        <a href="#" className="hover:text-gray-400 transition">Contact</a>
+                        <a href="/About" className="hover:text-gray-400 transition">About</a>
                     </li>
                 </ul>
             </nav>
