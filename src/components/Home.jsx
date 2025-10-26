@@ -92,16 +92,16 @@ export default function Home() {
                         </div>
 
                         {/* Texte à droite */}
-                        <div className="w-full md:w-[100%] space-y-4">
-                            <h1 className="text-white text-5xl md:text-6xl font-bold">
-                                Welcome to my Portfolio
-                            </h1>
-                            <p className="text-white text-lg md:text-xl">
-                                As a student developer at Epitech, I want to put my technical skills and curiosity to work for an innovative team.                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <div className="w-full md:w-[100%] space-y-4 pb-32 md:pb-0">
+                             <h1 className="text-white text-5xl md:text-6xl font-bold">
+                                 Welcome to my Portfolio
+                             </h1>
+                             <p className="text-white text-lg md:text-xl">
+                                 As a student developer at Epitech, I want to put my technical skills and curiosity to work for an innovative team.                            </p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
 
             {/* Section suivante */}
             <div
@@ -109,7 +109,7 @@ export default function Home() {
                 className="relative z-20 w-full h-[100vh] bg-white flex items-start justify-center"
                 style={{ transform: "translateY(100%)", willChange: "transform" }}
             >
-                <div className="max-w-3xl w-full px-6 md:px-12 mx-auto text-center space-y-6 pt-24 md:pt-32">
+                <div className="max-w-3xl w-full px-6 md:px-12 mx-auto text-center space-y-6 pt-24 md:pt-24 pb-32 md:pb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-black">
                         A little bit about me
                     </h2>
@@ -119,7 +119,7 @@ export default function Home() {
                     </p>
 
                     <p className="text-base md:text-lg text-stone-700 leading-relaxed">
-                        If you’re interested in my profile, feel free to get in touch (You can find all my information at the top right) and download my resume !
+                        If you’re interested in my profile, feel free to get in touch (You can find my information at the top right) and download my resume !
                     </p>
 
                     <div className="pt-4">
@@ -129,7 +129,7 @@ export default function Home() {
                             className="inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-full text-lg md:text-xl font-semibold shadow-2xl hover:scale-105 active:scale-95 transition-transform"
                             aria-label="Download CV"
                         >
-                            Télécharger mon CV
+                            Download my resume
                         </a>
                     </div>
                 </div>
