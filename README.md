@@ -42,3 +42,6 @@ rinted URL.
 
 error for deploiement at : 
 https://naiso-a.github.io/Projects
+
+## Pesonal repo :
+https://github.com/naiso-a/2025-Porfolio
