@@ -1,16 +1,39 @@
-# React + Vite
+# Portfolio-2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio project (React + Vite + Tailwind) for Martin Khyari — pages: Home, About, Projects, Skills, Navbar, Footer.
 
-Currently, two official plugins are available:
+## Tech stack
+- React (Vite)
+- Tailwind CSS
+- Anime.js (simple animations)
+- Plain JS / modern frontend tooling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+- Node.js 16+ (Windows)
+- npm or yarn
+- Git
 
-## React Compiler
+## Quick start (Windows / PowerShell)
+1. Open PowerShell at repo root:
+   cd C:\TR\PreMSC\Portfolio-2025
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Install dependencies:
+   npm install
 
-## Expanding the ESLint configuration
+3. Run dev server:
+   npm run dev
+   - Vite will show the local URL (usually http://localhost:5173)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Build for production:
+   npm run build
+
+5. Preview production build locally:
+   npm run preview
+
+## Project structure
+- src/
+  - components/ — Home, About, Projects, Skills, Navbar, Footer
+  - assets/ — images, video, icons
+  - main.jsx, App.jsx, index.css, etc.
+rinted URL.
+- For issues/questions, contact martin.khyari@gmail.com
