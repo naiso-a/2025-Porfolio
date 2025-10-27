@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen flex flex-col"> 
-        <Router>
+        <Router basename='/2025-Portfolio'>
           <NavBar />
           <main className="flex-1">
             <Routes>
